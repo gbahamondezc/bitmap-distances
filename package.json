@@ -4,7 +4,7 @@
   "description": "Bitmap matrix distances calculator.",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node --no-warnings --experimental-worker --require ts-node/register src/index.ts",
+    "start": "node --no-warnings --require ts-node/register src/index.ts",
     "build": "tsc",
     "build:watch": "tsc -w",
     "test": "jest --coverage --verbose",

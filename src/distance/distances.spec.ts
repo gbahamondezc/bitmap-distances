@@ -1,14 +1,9 @@
 import { Point, BitmapInfo } from '../types';
-import { List, fromJS } from 'immutable';
 import distanceCalculator from '.';
 
 describe('distances', () => {
-  it('must calculate distances to nearest `on bit` point for each `off bit` poit in the map', () => {
-    const expected: List<List<number>> = fromJS([
-      [3, 2, 1, 0],
-      [2, 1, 0, 0],
-      [1, 0, 0, 1],
-    ]);
+  it('must calculate distances for a 3x4', () => {
+    const expected = [[3, 2, 1, 0], [2, 1, 0, 0], [1, 0, 0, 1]];
     const onBitsSources: Point[] = [
       {
         row: 0,
@@ -48,8 +43,8 @@ describe('distances', () => {
     );
   });
 
-  it('must calculate distances to nearest `on bit` point for each `off bit` poit in the map 2', () => {
-    const expected: List<List<number>> = fromJS([[2, 1], [1, 0]]);
+  it('must calculate distances for a 2x2 map', () => {
+    const expected = [[2, 1], [1, 0]];
     const onBitsSources: Point[] = [
       {
         row: 1,

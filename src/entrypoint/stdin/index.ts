@@ -45,7 +45,7 @@ export const start = async (
 
     for await (const caseRow of casesStream(iterator)) {
       logger.success('> Distances: ');
-      logger.table(distanceCalculator.distancesToNearestONBit(caseRow).toJS());
+      logger.table(distanceCalculator.distancesToNearestONBit(caseRow));
     }
   }
 

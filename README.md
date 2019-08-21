@@ -3,6 +3,8 @@
 Computation of distances for each Off bit to the nearest On bit in a Bitmap
 **NodeJS + TypeScript + Jest**
 
+![alt text](./pic.png)
+
 ### Run instructions
 
 ```bash

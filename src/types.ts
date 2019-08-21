@@ -18,7 +18,7 @@ export interface BitmapInfo {
 }
 
 export interface BitsDistanceCalculator {
-  distancesToNearestONBit: (bitMapInfo: BitmapInfo) => List<List<number>>;
+  distancesToNearestONBit: (bitMapInfo: BitmapInfo) => number[][];
 }
 
 export interface EntryPoint {

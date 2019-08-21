@@ -1,13 +1,13 @@
 import { Point } from '../types';
-import { Direction } from './types';
+import { Direction, BitmapDimensions, BFSPipeData } from './types';
 import { getIn, List } from 'immutable';
 
 export const directionsTotal = 4;
 
-export const createInfinityMap = (rows: number, cols: number): number[][] =>
-  Array(rows).fill(Array(cols).fill(Infinity));
+export const createInfinityMap = (dims: BitmapDimensions): number[][] =>
+  Array(dims.rows).fill(Array(dims.columns).fill(Infinity));
 
-export const getPointForDirection = (
+export const incPointCostWithDirection = (
   direction: Direction,
   current: Point,
 ): Point => {
@@ -15,22 +15,22 @@ export const getPointForDirection = (
     [Direction.Up]: {
       row: current.row - 1,
       column: current.column,
-      cost: current.cost,
+      cost: current.cost + 1,
     },
     [Direction.Down]: {
       row: current.row + 1,
       column: current.column,
-      cost: current.cost,
+      cost: current.cost + 1,
     },
     [Direction.Left]: {
       row: current.row,
       column: current.column - 1,
-      cost: current.cost,
+      cost: current.cost + 1,
     },
     [Direction.Right]: {
       row: current.row,
       column: current.column + 1,
-      cost: current.cost,
+      cost: current.cost + 1,
     },
   };
 
@@ -45,10 +45,16 @@ export const isUnvisited = (
 
 export const isPointInsideMap = (
   point: Point,
-  rows: number,
-  columns: number,
+  dimensions: BitmapDimensions,
 ): boolean =>
   point.row >= 0 &&
-  point.row < rows &&
+  point.row < dimensions.rows &&
   point.column >= 0 &&
-  point.column < columns;
+  point.column < dimensions.columns;
+
+export const isUnvisitedAndInsideTheMap = (data: BFSPipeData): boolean => {
+  return (
+    isUnvisited(data.onBit, data.distancesMap) &&
+    isPointInsideMap(data.onBit, data.dimensions)
+  );
+};

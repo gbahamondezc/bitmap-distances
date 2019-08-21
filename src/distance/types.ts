@@ -28,12 +28,6 @@ export interface DistanceMapWithSources {
 export interface BFSPipeData {
   onBit: Point;
   distancesMap: List<List<number>>;
-  sources: List<Map<string, number>>;
+  sources?: List<Map<string, number>>;
   dimensions: BitmapDimensions;
-}
-
-export interface BFSInput {
-  dimensions: BitmapDimensions;
-  sources: List<Map<string, number>>;
-  distancesMap: List<List<number>>;
 }
