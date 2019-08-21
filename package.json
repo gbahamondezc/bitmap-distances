@@ -1,0 +1,40 @@
+{
+  "name": "bitmap-distances",
+  "version": "1.0.0",
+  "description": "Bitmap matrix distances calculator.",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node --no-warnings --experimental-worker --require ts-node/register src/index.ts",
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "test": "jest --coverage --verbose",
+    "test:watch": "jest --verbose --watch"
+  },
+  "repository": "git+https://github.com/gbahamondezc/bitmap-distances.git",
+  "author": "Gonzalo Bahamondez <gbahamondezc@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gbahamondezc/bitmap-distances.git/issues"
+  },
+  "homepage": "https://github.com/gbahamondezc/bitmap-distances.git#readme",
+  "devDependencies": {
+    "@ridedott/eslint-config": "gbahamondezc/eslint-config#array-type-fix",
+    "@types/jest": "^24.0.17",
+    "@types/node": "12.7.2",
+    "@types/ramda": "^0.26.19",
+    "@types/table": "^4.0.6",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.1.0",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.2.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "immutable": "^4.0.0-rc.12",
+    "ramda": "^0.26.1",
+    "table": "^5.4.6"
+  }
+}

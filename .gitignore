@@ -1,0 +1,24 @@
+# OS
+.DS_Store
+
+# npm && node
+node_modules
+package-lock.json
+npm-debug.log
+.node_repl_history
+
+# yarn
+yarn-error.log
+.yarn-integrity
+
+# editor
+.idea
+.vscode
+
+# test
+coverage
+
+# build
+dist
+
+
